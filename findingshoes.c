@@ -10,6 +10,7 @@ int main(void) {
         printf("%d\n",n);
         else 
         printf("%d\n",m + (2*(n-m)));
+        
     }
 	// your code goes here
 	return 0;
