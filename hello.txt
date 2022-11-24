@@ -13,3 +13,4 @@ git remote -v -> redirect to repository
 ls -> list of item in repository
 pwd -> present working directory
 git add hello.txt
+git clone LINK
