@@ -7,7 +7,7 @@ git config --global user.email "aayushs894@gmail.com"
 
 git add . -> staging
 git commit -m "message"  -> clicked snapshot / history saved
-git log -> all history visible
+git log -> all history visible + click q to quit
 git remote add origin LINK -> link repository to you vs code
 git remote -v -> redirect to repository
 ls -> list of item in repository
