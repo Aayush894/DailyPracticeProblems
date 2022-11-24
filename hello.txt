@@ -14,3 +14,5 @@ ls -> list of item in repository
 pwd -> present working directory
 git add hello.txt
 git clone LINK
+git branch aayush -> create new branch
+git checkout aayush -> pointer to aayush
