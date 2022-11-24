@@ -1,0 +1,9 @@
+hey! I am Aayush.
+
+git status -> to check if git repository exist
+git init -> to initialize a git repository 
+git config --user.name "Aayush Kumar Shrivastava"
+git config --user.email "aayushs894@gmail.com"
+
+git add . -> staging
+git commit -m "message"  -> clicked snapshot / history saved
