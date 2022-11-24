@@ -10,3 +10,6 @@ git commit -m "message"  -> clicked snapshot / history saved
 git log -> all history visible
 git remote add origin LINK -> link repository to you vs code
 git remote -v -> redirect to repository
+ls -> list of item in repository
+pwd -> present working directory
+git add hello.txt
