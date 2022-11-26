@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/aayus/Downloads/codingPractice",
-      "program": "c:/Users/aayus/Downloads/codingPractice/build/Debug/outDebug",
+      "cwd": "c:/Users/aayus/Downloads/codingPractice using c",
+      "program": "c:/Users/aayus/Downloads/codingPractice using c/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
