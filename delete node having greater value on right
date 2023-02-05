@@ -1,0 +1,46 @@
+class Solution
+{
+    public:
+    void insert_at_end(Node *head,int key)
+    {
+        Node *temp = new Node(key) ;
+        temp->next = NULL ;
+        Node *ptr = head ; 
+        while(ptr->next) 
+        ptr = ptr->next ;
+        
+        ptr->next = temp ;
+        
+    }
+    Node *compute(Node *head)
+    {  
+        Node *ptr = head ; 
+        Node * ans = new Node(-1) ;
+        Node *ptr1 = head ;
+        if(head->next == NULL)
+        return head ; 
+        int m = 0 ;
+        while(ptr && ptr->next)
+        {
+            m = 0 ; 
+            ptr1 = ptr->next ; 
+            while(ptr1)
+            {
+                if(ptr1->data > ptr->data)
+                {
+                    m++ ;
+                    break ;
+                }
+                ptr1 = ptr1->next ; 
+            }
+            if(!m)
+            insert_at_end(ans,ptr->data) ; 
+            
+            ptr = ptr->next ; 
+        }
+        insert_at_end(ans,ptr->data ) ; 
+        return ans->next ;
+        // your code goes here
+    }
+    
+};
