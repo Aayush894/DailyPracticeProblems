@@ -1,0 +1,32 @@
+class Solution{
+public:
+    Node* insert_at_end(int key, Node *head)
+    {
+        Node *temp = new Node(key)  ;
+        head->next = temp ;
+        temp->next = NULL ;
+        
+    }
+    Node* divide(int N, Node *head){
+        Node *even = new Node(-1),*odd = new Node(-1) ;
+        Node *tail1 = even , *tail2 = odd ;
+        Node *ptr = head ;
+        while(ptr)
+        {
+            if(ptr->data % 2 == 0 )
+            {
+                insert_at_end(ptr->data,tail1);
+                tail1 = tail1->next ;
+            }
+            else 
+            {
+                insert_at_end(ptr->data,tail2);
+                tail2 = tail2->next ;
+            }
+            ptr = ptr->next ;
+        }
+        tail1->next = odd->next ;
+        return even->next ; 
+        // code here
+    }
+};
