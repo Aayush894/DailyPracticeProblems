@@ -1,0 +1,88 @@
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode() : val(0), next(nullptr) {}
+ *     ListNode(int x) : val(x), next(nullptr) {}
+ *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+ * };
+ */
+class Solution {
+public:
+    void insert_at_end(ListNode* head ,int key)
+    {
+        ListNode * ptr = head ; 
+        while(ptr->next)
+        ptr = ptr->next ; 
+        
+        ListNode *temp = new ListNode(key)  ;
+        temp->next = NULL ; 
+        ptr->next = temp ;
+    }
+    ListNode* reverse(ListNode *head) 
+    {
+        ListNode *prev = NULL ,*curr = head ; 
+        while(curr)
+        {
+            ListNode* nex = curr->next ;
+            curr->next = prev ;
+            prev = curr ;
+            curr = nex ;
+        }
+        return prev ;
+    }
+    ListNode* addTwoNumbers(ListNode* first, ListNode* second)
+    {
+        ListNode* ptr1 = first ,* ptr2 = second ;
+        int carry = 0;
+        ListNode *ans = new ListNode(-1) ; 
+        // Node* prev1 = NULL ,*prev2 = NULL;
+        while(ptr1 && ptr2)
+        {
+            // prev1 = ptr1;
+            // prev2 = ptr2; 
+            if(ptr1->val + ptr2->val + carry >= 10)
+            {
+                insert_at_end(ans,(ptr1->val + ptr2->val + carry)%10 ) ;
+                carry = 1; 
+            }
+            else 
+            {
+                insert_at_end(ans,(ptr1->val + ptr2->val + carry)%10 ) ;
+                carry = 0 ;
+            }
+            ptr1 = ptr1->next ;
+            ptr2 = ptr2->next ;
+        }
+        if(ptr1 == NULL)
+        {
+            while(ptr2)
+            {
+                insert_at_end(ans,(ptr2->val + carry) %10 ) ; 
+                if(ptr2->val + carry >= 10)
+                carry = 1 ;
+                else 
+                carry = 0 ;
+                ptr2 = ptr2->next ; 
+            }
+        }
+        else 
+        {
+            while(ptr1)
+            {
+                insert_at_end(ans,(ptr1->val + carry) %10 ) ; 
+                if(ptr1->val + carry >= 10)
+                carry = 1 ;
+                else 
+                carry = 0 ;
+                ptr1 = ptr1->next ; 
+            }
+        }
+        if(carry)
+        insert_at_end(ans,carry) ; 
+        //ans = reverse(ans->next) ; 
+    
+        return ans->next  ;// code here
+    }
+};
