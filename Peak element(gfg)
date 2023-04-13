@@ -1,0 +1,18 @@
+class Solution
+{
+    public:
+    int peakElement(int arr[], int n)
+    {
+        int max = 0 ,mx_index = -1 ; 
+        for(int i = 0 ;i < n;i++)
+        {
+            if(max < arr[i])
+            {
+                max = arr[i] ;
+                mx_index = i ; 
+            }
+        }
+        return mx_index  ;
+       // Your code here
+    }
+};
