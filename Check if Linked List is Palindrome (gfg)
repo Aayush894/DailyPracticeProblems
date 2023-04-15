@@ -1,0 +1,27 @@
+class Solution{
+  public:
+    //Function to check whether the list is palindrome.
+    bool isPalindrome(Node *head)
+    {
+        Node * ptr = head ;
+        int a = 0 ;
+        while(ptr != NULL )
+        {
+            a = ((a*10) + ptr->data) ;
+            ptr =  ptr->next ;
+        }
+        int temp = a;
+        int rev = 0,d;
+        while(temp)
+        {
+            d = temp % 10 ;
+            rev = rev*10 + d;
+            temp = temp/10 ;
+        }
+        if(rev == a)
+        return true ;
+        else
+        return false ;
+        //Your code here
+    }
+};
